@@ -7,7 +7,9 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 |---|------|------------|
 | 🎨 | `theme/Vina - Kurta x Zoldyck.json` | A SillyTavern **UI theme** (import-ready, custom CSS embedded) |
 | 🎨 | `theme/vina-custom.css` | The same custom CSS, un-minified, for editing |
-| 📖 | `lorebook/Vina_HxH.json` | A **World Info / lorebook** for Vina + a weather-director entry |
+| 📖 | `lorebook/Vina_HxH.json` | A full **World Info / lorebook** for Vina + a weather-director entry |
+| 🌦️ | `lorebook/Weather_Director.json` | **Weather only** — just the `[wx:]` director entry, to drop into your *own* world without touching your canon |
+| 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
 
 It's built to pair with the [**st-weather-overlay**](https://github.com/xo-nara/st-weather-overlay)
 extension so the sky reacts to the story.
@@ -90,6 +92,21 @@ the story instead of sitting on top of it.
 
 > Prefer to steer the sky by hand? Turn on **Free Mode** in the extension and use its dropdowns —
 > the lorebook tag is simply ignored while Free Mode is active.
+
+### Already have your own Vina world? Use the weather-only file
+
+If you already run your own character card / lorebook and only want the weather behaviour, **don't**
+import the full `Vina_HxH.json` (its lore may clash with your canon). Instead:
+
+1. **World Info → Import** → `lorebook/Weather_Director.json` — one always-on entry, no story lore.
+2. Attach it to your world (or set it global). Done — your existing canon is untouched.
+
+### Hiding the tag from the chat
+
+If `[wx: ...]` shows up as visible text in replies, import `weather/Hide-Weather-Tag.regex.json` via
+**Extensions → Regex → Import**. It is set to *markdown/display only* (`placement: AI output`,
+`markdownOnly: true`), so the tag disappears from view **but stays in the raw message** for the overlay
+to parse. Do not make it "prompt only" or delete the raw text, or the overlay will stop reacting.
 
 ---
 

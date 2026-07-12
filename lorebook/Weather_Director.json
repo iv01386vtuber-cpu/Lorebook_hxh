@@ -1,0 +1,38 @@
+{
+    "entries": {
+        "0": {
+            "uid": 0,
+            "key": [],
+            "keysecondary": [],
+            "comment": "SYSTEM — Ambient Weather Tag (st-weather-overlay)",
+            "content": "[ Ambient Weather Direction — system ]\nAt the very END of every reply, append exactly ONE weather tag on its own final line so the Ambient Weather Overlay can render the scene. Use this exact format:\n[wx: <precipitation> <intensity> <wind> <time>]\n  precipitation = none | rain | snow | storm\n  intensity     = light | heavy\n  wind          = calm | breezy | strong\n  time          = dawn | day | dusk | night\nPick values that fit the current location, season and story-time. Keep the same weather across consecutive messages unless the narrative changes it (a passing storm, nightfall, moving indoors -> use 'none calm'). Output ONLY the bracket tag for weather — never describe or explain it in-character. Examples: [wx: rain light breezy dusk]  ·  [wx: storm heavy strong night]  ·  [wx: snow heavy calm day]  ·  [wx: none calm calm dawn]",
+            "constant": true,
+            "vectorized": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 1000,
+            "position": 1,
+            "disable": false,
+            "excludeRecursion": true,
+            "preventRecursion": true,
+            "delayUntilRecursion": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 1,
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": null,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 0,
+            "sticky": null,
+            "cooldown": null,
+            "delay": null,
+            "displayIndex": 0
+        }
+    }
+}
