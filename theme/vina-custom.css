@@ -1,0 +1,216 @@
+/* =====================================================================
+   VINA — Kurta × Zoldyck  ·  "Lore Tome" theme for SillyTavern
+   ---------------------------------------------------------------------
+   OC: Vina — childhood friend of Kurapika (Kurta Clan, Lukso Province),
+   trained in the assassin arts alongside Killua Zoldyck.
+
+   The palette fuses her two halves:
+     · Kurta   -> scarlet ( the crimson of awakened eyes ), warm parchment,
+                  aged gold, deep forest.
+     · Zoldyck -> near-black tome, electric violet + lightning cyan
+                  ( Killua's Nen ), cold steel.
+
+   Designed for READING LORE: serif body, justified columns, ornamental
+   dividers, a soft vignette, and message "pages" that let an ambient
+   weather overlay glow through from behind.
+   ===================================================================== */
+
+:root {
+    /* --- Kurta ------------------------------------------------------ */
+    --vina-scarlet:      #d62839;   /* awakened scarlet eyes            */
+    --vina-scarlet-soft: #e35d68;
+    --vina-parchment:    #e6d6be;   /* body text / aged page           */
+    --vina-gold:         #c8a24a;   /* clan gold / headings            */
+    --vina-forest:       #2f5d50;   /* Lukso pines                     */
+
+    /* --- Zoldyck ---------------------------------------------------- */
+    --vina-ink:          #100e14;   /* the tome                        */
+    --vina-ink-2:        #17141d;
+    --vina-violet:       #9e94c4;   /* assassin's aura                 */
+    --vina-lightning:    #78d2e6;   /* Killua's electric cyan          */
+    --vina-steel:        #6b6b78;
+
+    /* --- structural ------------------------------------------------ */
+    --vina-page:         rgba(26, 22, 30, 0.82);
+    --vina-page-user:    rgba(30, 20, 24, 0.80);
+    --vina-edge:         rgba(200, 162, 74, 0.28);
+    --vina-glow:         rgba(214, 40, 57, 0.35);
+}
+
+/* ---- Global reading surface -------------------------------------- */
+/* Soft vignette so the tome feels bound at the edges. Weather particles
+   from an ambient overlay still read through the translucent pages.     */
+#chat {
+    background:
+        radial-gradient(120% 90% at 50% -10%,
+            rgba(158, 148, 196, 0.06) 0%,
+            transparent 55%),
+        radial-gradient(140% 120% at 50% 120%,
+            rgba(214, 40, 57, 0.05) 0%,
+            transparent 55%);
+    scroll-behavior: smooth;
+}
+
+/* ---- Message "pages" --------------------------------------------- */
+.mes {
+    position: relative;
+    background: var(--vina-page);
+    border: 1px solid var(--vina-edge);
+    border-radius: 4px;
+    box-shadow:
+        0 2px 14px rgba(0, 0, 0, 0.45),
+        inset 0 0 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+}
+
+/* left "spine" accent — scarlet for the character, cyan for you */
+.mes::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 8%;
+    width: 3px; height: 84%;
+    border-radius: 3px;
+    background: linear-gradient(180deg,
+        transparent, var(--vina-scarlet), transparent);
+    box-shadow: 0 0 10px var(--vina-glow);
+    opacity: 0.85;
+}
+.mes[is_user="true"] {
+    background: var(--vina-page-user);
+}
+.mes[is_user="true"]::before {
+    background: linear-gradient(180deg,
+        transparent, var(--vina-lightning), transparent);
+    box-shadow: 0 0 10px rgba(120, 210, 230, 0.4);
+}
+
+/* ---- Names -------------------------------------------------------- */
+.name_text {
+    font-family: "Cinzel", "Trajan Pro", Georgia, serif;
+    letter-spacing: 0.06em;
+    color: var(--vina-gold);
+    text-shadow: 0 0 6px rgba(200, 162, 74, 0.25);
+}
+.mes[is_user="true"] .name_text {
+    color: var(--vina-lightning);
+    text-shadow: 0 0 6px rgba(120, 210, 230, 0.25);
+}
+
+/* ---- Body text: the lore itself ---------------------------------- */
+.mes_text {
+    font-family: "EB Garamond", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    font-size: 1.02em;
+    line-height: 1.72;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    color: var(--vina-parchment);
+}
+
+/* spoken words glow scarlet — the Kurta eyes */
+.mes_text q,
+.mes_text q * {
+    color: var(--vina-scarlet-soft) !important;
+    font-style: normal;
+    text-shadow: 0 0 8px rgba(214, 40, 57, 0.20);
+}
+.mes_text q::before,
+.mes_text q::after {
+    color: var(--vina-scarlet);
+    opacity: 0.6;
+}
+
+/* inner thoughts / emphasis — the assassin's cool violet */
+.mes_text em,
+.mes_text i {
+    color: var(--vina-violet);
+    font-style: italic;
+}
+.mes_text strong,
+.mes_text b {
+    color: var(--vina-gold);
+    font-weight: 600;
+}
+
+/* ---- Lore headings inside entries -------------------------------- */
+.mes_text h1, .mes_text h2, .mes_text h3, .mes_text h4 {
+    font-family: "Cinzel", Georgia, serif;
+    color: var(--vina-gold);
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--vina-edge);
+    padding-bottom: 0.2em;
+    text-shadow: 0 1px 0 #000;
+}
+
+/* ---- Ornamental divider ( ❖ ) ------------------------------------ */
+.mes_text hr {
+    border: none;
+    height: 1px;
+    margin: 1.1em 10%;
+    background: linear-gradient(90deg,
+        transparent, var(--vina-gold), transparent);
+    overflow: visible;
+}
+.mes_text hr::after {
+    content: "❖";
+    display: block;
+    text-align: center;
+    color: var(--vina-scarlet);
+    background: var(--vina-page);
+    width: 1.4em;
+    margin: -0.75em auto 0;
+    font-size: 0.8em;
+    text-shadow: 0 0 8px var(--vina-glow);
+}
+
+/* ---- Blockquote: a lore aside ------------------------------------ */
+.mes_text blockquote {
+    border-left: 2px solid var(--vina-scarlet);
+    background: rgba(214, 40, 57, 0.05);
+    margin: 0.6em 0;
+    padding: 0.4em 0.9em;
+    border-radius: 0 4px 4px 0;
+    color: var(--vina-parchment);
+}
+
+/* ---- Code / stat blocks ------------------------------------------ */
+.mes_text code, .mes_text pre {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    background: rgba(120, 210, 230, 0.07);
+    border: 1px solid rgba(120, 210, 230, 0.18);
+    border-radius: 3px;
+    color: var(--vina-lightning);
+}
+
+/* ---- Input area: writing on the page ----------------------------- */
+#send_form, #send_textarea {
+    background: var(--vina-ink-2);
+    border: 1px solid var(--vina-edge);
+    color: var(--vina-parchment);
+    font-family: "EB Garamond", Georgia, serif;
+}
+#send_textarea::placeholder { color: var(--vina-steel); }
+#send_form:focus-within {
+    box-shadow: 0 0 12px var(--vina-glow);
+    border-color: var(--vina-scarlet);
+}
+
+/* ---- Themed scrollbar -------------------------------------------- */
+#chat::-webkit-scrollbar { width: 10px; }
+#chat::-webkit-scrollbar-track { background: var(--vina-ink); }
+#chat::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--vina-scarlet), var(--vina-forest));
+    border-radius: 6px;
+    border: 2px solid var(--vina-ink);
+}
+#chat::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--vina-scarlet-soft), var(--vina-forest));
+}
+
+/* ---- Respect reduced-motion & weather overlay -------------------- */
+/* The ambient weather overlay renders as a fixed full-screen layer with
+   pointer-events disabled; nothing here overrides its z-index, so rain,
+   snow and lightning glow softly behind these translucent pages.        */
+@media (prefers-reduced-motion: reduce) {
+    #chat { scroll-behavior: auto; }
+}
