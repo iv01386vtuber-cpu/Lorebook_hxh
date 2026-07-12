@@ -9,7 +9,11 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🎨 | `theme/vina-custom.css` | The same custom CSS, un-minified, for editing |
 | 📖 | `lorebook/Vina_HxH.json` | A full **World Info / lorebook** for Vina + a weather-director entry |
 | 🌦️ | `lorebook/Weather_Director.json` | **Weather only** — just the `[wx:]` director entry, to drop into your *own* world without touching your canon |
+| 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
+| 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+
+> **Note on the "Sullivan / Surilvan" spelling:** this is intentional in-world lore (entry `10` — *Surilvan* is the primary family name, *Sullivan* is William's branch spelling; both are valid), **not** a typo, so v48 leaves it untouched.
 
 It's built to pair with the [**st-weather-overlay**](https://github.com/xo-nara/st-weather-overlay)
 extension so the sky reacts to the story.
