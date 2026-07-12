@@ -1,0 +1,39 @@
+{
+    "entries": {
+        "0": {
+            "uid": 0,
+            "key": [],
+            "keysecondary": [],
+            "comment": "00 SYS · 🌦️ 05 — Ambient Weather Tag [wx:] (always on)",
+            "content": "[AMBIENT WEATHER TAG — META / ไม่ใช่ IC]\nหลังจบเนื้อความ IC ทุกครั้ง ให้ขึ้นบรรทัดใหม่แล้ววาง 'เมทาแท็ก' สภาพอากาศเพียง 1 อัน สำหรับส่วนขยาย Ambient Weather Overlay:\n[wx: <precip> <intensity> <wind> <time>]\n  precip    = none | rain | snow | storm\n  intensity = light | heavy\n  wind      = calm | breezy | strong\n  time      = dawn | day | dusk | night\n\nกฎการใช้ (สำคัญ — ให้เข้ากับ ★02 [ANTI_OOC] และ ★03 [STYLE]):\n1) แท็กนี้เป็น META/ระบบ ไม่ใช่บทบรรยายหรือคำพูดของตัวละคร → ไม่นับเป็น 'ประโยคปิดฉาก' (SCENE-ENDING) และห้ามให้ตัวละครเอ่ยถึงสภาพอากาศเองแบบฟันธง.\n2) วางเป็น 'บรรทัดสุดท้ายจริง ๆ' หลังประโยคปิดฉากที่เป็นภาพแล้วเท่านั้น ห้ามอธิบายแท็ก.\n3) เลือกค่าตามสถานที่/เวลาของฉาก อ้างอิงชีวนิเวศจากเอนทรี '303 — Climate & weather'. เมืองที่แคนนอนไม่ระบุ = เลือกอากาศกลาง ๆ สมเหตุผล (ถือเป็น [FANON] เชิงบรรยากาศเท่านั้น ไม่ต้องให้ตัวละครยืนยัน).\n4) อยู่ในอาคาร/ใต้ดิน/ยามสงบ → ใช้ [wx: none calm calm <time>].\n5) คงอากาศเดิมต่อเนื่องระหว่างข้อความ เปลี่ยนเมื่อเนื้อเรื่องเปลี่ยนจริง (พายุเคลื่อนผ่าน, ค่ำลง, ย้ายสถานที่).\n6) ถ้าติดตั้ง regex ซ่อนแท็ก ผู้อ่านจะไม่เห็นบรรทัดนี้ แต่ overlay ยังอ่านค่าได้.\nตัวอย่าง: [wx: rain light breezy dusk] · [wx: storm heavy strong night] · [wx: snow heavy calm day] · [wx: none calm calm night]",
+            "constant": true,
+            "vectorized": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 1,
+            "position": 4,
+            "disable": false,
+            "excludeRecursion": true,
+            "preventRecursion": true,
+            "delayUntilRecursion": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 1,
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": null,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 0,
+            "sticky": null,
+            "cooldown": null,
+            "delay": null,
+            "displayIndex": 0
+        }
+    },
+    "name": "HxH — Ambient Weather Tag"
+}
