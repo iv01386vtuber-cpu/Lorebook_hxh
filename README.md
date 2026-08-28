@@ -119,3 +119,20 @@ to parse. Do not make it "prompt only" or delete the raw text, or the overlay wi
 - Weather overlay: **st-weather-overlay** by *xo.nara* — https://github.com/xo-nara/st-weather-overlay
 - *Hunter × Hunter* © Yoshihiro Togashi. Vina is a fan original character; Kurapika, Killua and the
   Zoldyck/Kurta clans are used for non-commercial fan roleplay.
+
+---
+
+## 📕 HxH · Ivy Lee (Kurta Ember) — v7 LEAN
+
+A separate, self-contained pack in [`hxh_ivy_v7/`](hxh_ivy_v7/) for the Kurapika × Ivy build,
+rebuilt from the v5/v6 files: canon corrected to the Succession-Contest present, the OC's Hatsu
+reworked into one lawful Specialist ability, and the always-on token cost cut from ~5.5k to ~2.2k.
+
+| File | Purpose |
+|---|---|
+| `hxh_ivy_v7/lorebook/HxH_Ivy_v7_Lorebook.json` | 29-entry World Info (4 always-on, 4 disabled POST-REVELATION entries) |
+| `hxh_ivy_v7/card/Kurapika_v7.json` | Kurapika card, v2 spec, 3 opening scenes, ensemble-aware |
+| `hxh_ivy_v7/persona/Ivy_Persona_v7.txt` | Ivy persona text to paste into the Persona box |
+| `hxh_ivy_v7/preset/ST_Claude_Preset_v7.json` | Claude preset — main prompt, jailbreak, author's note, sampler settings |
+| `hxh_ivy_v7/preset/JAILBREAK_v7.md` | The same three blocks as copy-paste, plus recommended settings |
+| `hxh_ivy_v7/README.md` | **The analysis**: every canon error found, and the full rework of the OC's power |

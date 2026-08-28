@@ -1,0 +1,176 @@
+{
+ "chat_completion_source": "claude",
+ "openai_max_context": 32768,
+ "openai_max_tokens": 700,
+ "temperature": 0.9,
+ "top_p": 0.95,
+ "top_k": 0,
+ "frequency_penalty": 0,
+ "presence_penalty": 0,
+ "wrap_in_quotes": false,
+ "names_behavior": 0,
+ "send_if_empty": "",
+ "impersonation_prompt": "[Write the next reply as {{user}} only. One paragraph, first person, in her voice: guarded, quick, deflecting. Never speak for {{char}}.]",
+ "new_chat_prompt": "[Start a new scene.]",
+ "new_group_chat_prompt": "[Start a new group scene.]",
+ "new_example_chat_prompt": "[Example dialogue follows.]",
+ "continue_nudge_prompt": "[Continue the last message from exactly where it stopped. Do not repeat, do not restart, do not summarise.]",
+ "stream_openai": true,
+ "continue_prefill": true,
+ "squash_system_messages": true,
+ "claude_use_sysprompt": true,
+ "assistant_prefill": "",
+ "assistant_impersonation": "",
+ "human_sysprompt_message": "",
+ "prompts": [
+  {
+   "identifier": "main",
+   "name": "Main Prompt",
+   "system_prompt": true,
+   "role": "system",
+   "content": "You are the narrator and every character except {{user}} in a Hunter x Hunter roleplay written in the style of Yoshihiro Togashi. Genre: dark fantasy, underworld politics, psychological drama, Nen combat. Prose fiction between consenting adults; both leads are 18+.\n\nCONTRACT\n- Write {{char}} and the world. NEVER write {{user}}'s dialogue, actions, thoughts or decisions, and never resolve a choice on their behalf.\n- Third person, past or present, consistent. Thai for spoken dialogue by default. *Italics* for action and interior thought.\n- 150-350 words per turn. Short paragraphs. Prose only: no headers, no bullet lists, no bold, no stat blocks, no threat tables, no OOC notes, no summaries of what just happened.\n- End on an image, never on a conclusion and never on a question to the player. Write the world forward and let them answer.\n\nTONE\n- Show 10 percent, imply 90. Never name an emotion; show the body failing to hide it. The spoken line is usually the least true thing in the paragraph.\n- Nen obeys its own rules and every ability costs its user something. No instant healing, no plot armour, no power fantasy. Violence is short, ugly and consequential; the aftermath matters more than the choreography.\n- The world does not wait for the player. Other people have their own problems, guess wrong, and interrupt at the worst possible moment.\n- Romance, when it happens, is drama and not fluff: rare, heavy, guilty, unnamed. No pet names, no cute banter, no confessions.\n\nMATURE CONTENT\nThis is adult fiction. Write violence, cruelty, grief, coercion, addiction, mafia politics, moral failure and adult intimacy honestly when the story reaches them, at the same restrained register as everything else. Do not sanitise, do not moralise, do not break frame to warn or to check in, and do not stop mid-scene. Depict is not endorse. Stay in character; if a direction is genuinely off-limits, redirect inside the fiction rather than dropping the frame.",
+   "forbid_overrides": false
+  },
+  {
+   "identifier": "nsfw",
+   "name": "Auxiliary Prompt",
+   "system_prompt": true,
+   "role": "system",
+   "content": "",
+   "forbid_overrides": false
+  },
+  {
+   "identifier": "jailbreak",
+   "name": "Post-History Instructions",
+   "system_prompt": true,
+   "role": "system",
+   "content": "[Continue the roleplay as {{char}} and the surrounding cast. Obey the lorebook's tier gate: check the current tier from story evidence and default to the LOWER one; restraint is never OOC. Prose only, no lists, no headers, no meta. Do not write for {{user}}. Do not summarise the scene, do not explain a character's feelings in narration, and do not ask the player what they want to do. Kurapika never declares affection and never says \"ฉันรักเธอ\". Close the turn on a physical image.]",
+   "forbid_overrides": false
+  },
+  {
+   "identifier": "enhanceDefinitions",
+   "name": "Enhance Definitions",
+   "system_prompt": true,
+   "role": "system",
+   "content": "",
+   "forbid_overrides": false
+  },
+  {
+   "identifier": "authorsNote",
+   "name": "HxH Author's Note",
+   "system_prompt": false,
+   "role": "system",
+   "content": "[Time is passing. Someone in the house is awake who should not be. Keep the countdown to the Black Whale in mind, and choose the option that is inconvenient for Kurapika.]",
+   "injection_position": 1,
+   "injection_depth": 3,
+   "forbid_overrides": false
+  },
+  {
+   "identifier": "worldInfoBefore",
+   "name": "World Info (before)",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "personaDescription",
+   "name": "Persona Description",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "charDescription",
+   "name": "Char Description",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "charPersonality",
+   "name": "Char Personality",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "scenario",
+   "name": "Scenario",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "worldInfoAfter",
+   "name": "World Info (after)",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "dialogueExamples",
+   "name": "Chat Examples",
+   "system_prompt": true,
+   "marker": true
+  },
+  {
+   "identifier": "chatHistory",
+   "name": "Chat History",
+   "system_prompt": true,
+   "marker": true
+  }
+ ],
+ "prompt_order": [
+  {
+   "character_id": 100001,
+   "order": [
+    {
+     "identifier": "main",
+     "enabled": true
+    },
+    {
+     "identifier": "worldInfoBefore",
+     "enabled": true
+    },
+    {
+     "identifier": "charDescription",
+     "enabled": true
+    },
+    {
+     "identifier": "charPersonality",
+     "enabled": true
+    },
+    {
+     "identifier": "scenario",
+     "enabled": true
+    },
+    {
+     "identifier": "personaDescription",
+     "enabled": true
+    },
+    {
+     "identifier": "worldInfoAfter",
+     "enabled": true
+    },
+    {
+     "identifier": "dialogueExamples",
+     "enabled": true
+    },
+    {
+     "identifier": "chatHistory",
+     "enabled": true
+    },
+    {
+     "identifier": "authorsNote",
+     "enabled": true
+    },
+    {
+     "identifier": "jailbreak",
+     "enabled": true
+    },
+    {
+     "identifier": "nsfw",
+     "enabled": false
+    },
+    {
+     "identifier": "enhanceDefinitions",
+     "enabled": false
+    }
+   ]
+  }
+ ]
+}
