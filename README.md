@@ -12,6 +12,7 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
 | 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+| 🧠 | `prompts/NPCs-Agency-v3.md` | The **`<NPCs>` prompt block, v3.0** — same strict entry gate, plus a full agency layer so NPCs already in the scene think, want and decide for themselves |
 
 > **Note on the "Sullivan / Surilvan" spelling:** this is intentional in-world lore (entry `10` — *Surilvan* is the primary family name, *Sullivan* is William's branch spelling; both are valid), **not** a typo, so v48 leaves it untouched.
 
@@ -119,3 +120,26 @@ to parse. Do not make it "prompt only" or delete the raw text, or the overlay wi
 - Weather overlay: **st-weather-overlay** by *xo.nara* — https://github.com/xo-nara/st-weather-overlay
 - *Hunter × Hunter* © Yoshihiro Togashi. Vina is a fan original character; Kurapika, Killua and the
   Zoldyck/Kurta clans are used for non-commercial fan roleplay.
+
+---
+
+## 🧠 NPC agency — the `<NPCs>` prompt block
+
+`prompts/NPCs-Agency-v3.md` is a drop-in replacement for the `<NPCs>` block in your preset / JB
+(not a lorebook entry — paste it into the preset where v2.0 lives).
+
+v2.0 mixed two different questions into one gated system, so a closed dice gate tended to leave
+NPCs who were *already in the scene* standing around as scenery. v3.0 splits them:
+
+- **PART A — ENTRY** — *who is allowed to appear.* Unchanged and still strict: the Stage 0 hard
+  blocks, the `{{roll:1d20}}` 30% window, and the Stage 2 atmosphere/location/situation validation
+  all survive verbatim. A passed roll is still permission, never obligation.
+- **PART B — AGENCY** — *how anyone already present thinks.* Ungated and unrolled. Each NPC gets a
+  want, a fear, a private stance on {{user}}, a mood they arrived with, and a hard limit on what
+  they can know. Every turn they resolve *want → what the situation did to it → what their
+  character does about it* — and may refuse, bargain, ignore, leave, be wrong, or push their own
+  agenda instead of the plot's.
+
+Their thinking reaches the page as behaviour only — never as narrated inner monologue — so the
+block stays inside the POV limits that entry `646` (Deception & Politics) already enforces, and
+pairs with `★02 ANTI_OOC` and `★04 HUMAN_DEPTH` rather than fighting them.
