@@ -12,6 +12,9 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
 | 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+| 📚 | `lorebook/HxH_UNIFIED_v58.json` | The **757-entry HxH UNIFIED v58** book (Phase Arbiter, Phase G present-day anchor, romance + human-depth engines) |
+| ⚙️ | `preset/ST_Claude_Preset_v8.json` | A **Claude chat-completion preset** built against v58 — supplies the NPC Engine and Scheme Engine the book delegates to the preset |
+| 📝 | `docs/JAILBREAK_ANALYSIS_v58.md` | Why v8 exists: a line-by-line audit of the old v7 preset against v58 (Thai) |
 
 > **Note on the "Sullivan / Surilvan" spelling:** this is intentional in-world lore (entry `10` — *Surilvan* is the primary family name, *Sullivan* is William's branch spelling; both are valid), **not** a typo, so v48 leaves it untouched.
 
@@ -119,3 +122,33 @@ to parse. Do not make it "prompt only" or delete the raw text, or the overlay wi
 - Weather overlay: **st-weather-overlay** by *xo.nara* — https://github.com/xo-nara/st-weather-overlay
 - *Hunter × Hunter* © Yoshihiro Togashi. Vina is a fan original character; Kurapika, Killua and the
   Zoldyck/Kurta clans are used for non-commercial fan roleplay.
+
+---
+
+## ⚙️ The Claude preset (v8)
+
+`preset/ST_Claude_Preset_v8.json` is a chat-completion preset written **against the v58 book**.
+It exists because v58's compatibility layer hands four jobs to the preset — NPC Engine, World Sim,
+Deep Cognition, Subtext Amplifier — and the older Claude preset supplied none of them.
+
+What it adds on top of the lorebook:
+
+- **Authority chain** — an explicit 5-level order (Master Override → Core/Anti-OOC → Style/Depth →
+  preset → model instinct) so conflicting instructions stop being resolved by vibes.
+- **Phase Gate** — replaces the old preset's reference to a "tier gate" that does not exist in v58.
+  Defaults "now" to the book's present-day phase, one anchor at a time, no stage-skipping, and
+  takes the more restrained reading when two are possible.
+- **NPC Engine** — T1/T2/T3 tiers, the six human laws, and the golden test, run every turn.
+- **Scheme Engine** — plans inside plans, always on, with the fairness rules (a clue on the page
+  before the payoff; no enemy plan leaking through narration).
+- **Mature & Romance Engine** — romance stays legible while the word stays banned, the puncture
+  rule is mandatory on every warm scene, and witnesses carry what the pair may not say.
+
+**Install:** AI Response Configuration → *Chat Completion Presets* → import (📥) →
+`preset/ST_Claude_Preset_v8.json`.
+
+> Do **not** run it alongside the Omega preset — the NPC and Scheme blocks would duplicate Omega's
+> own engines. Pick one.
+
+Full rationale, including the config values that were truncating replies:
+[`docs/JAILBREAK_ANALYSIS_v58.md`](docs/JAILBREAK_ANALYSIS_v58.md).
