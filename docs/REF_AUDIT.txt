@@ -1,0 +1,57 @@
+entries      758 -> 363   (archive 402)
+always-on    7932 -> 3665 tok/turn
+book total   ~265988 -> ~233529 tok
+UID refs ซ่อม 161 จุด | ตัดทิ้ง(ชี้ไปหาของที่ไม่มี) 2 เลข
+  เลขที่หาเป้าไม่เจอ: 636, 697
+REF AUDIT — v59 -> v60 LEAN
+ตารางนี้ให้ตรวจว่าลิงก์ถูกเขียนใหม่ไปหาเป้าที่ถูกต้องไหม
+
+## ลิงก์ที่ถูกเขียนใหม่ (เลขเดิมในเนื้อหา -> uid จริงใน v60)
+  UID   101  ->  UID 32     (x12)  💞 50 REL · Vina ↔ Kurapika — รวม 2 ส่วน (+ axiom-break layer → UID
+  UID   105  ->  UID 6      (x12)  10 WORLD · 105 — Black Market Status: Vina's Eyes & Underground Ru
+  UID   102  ->  UID 33     (x11)  💞 50 REL · Vina ↔ Killua — รวม 3 ส่วน
+  UID   103  ->  UID 99103  (x11)  👤 30 CHAR · Kurapika [L3 JEALOUSY / self-isolation]
+  UID    80  ->  UID 99101  (x9)  👤 30 CHAR · Kurapika [L1 CORE + daily personality]
+  UID   204  ->  UID 67     (x8)  70 TIME · 204 — Autonomy Ethics: Kurapika's Operational Framework
+  UID    87  ->  UID 99114  (x7)  👤 30 CHAR · Leorio [L1 CORE full profile]
+  UID    31  ->  UID 45     (x6)  70 TIME · 31 — [PHASE B] Zoldyck Training Era — Killua & Vina
+  UID    51  ->  UID 50     (x6)  70 TIME · 51 — [PHASE D] ★ THE RECOGNITION ARC (critical)
+  UID    14  ->  UID 10     (x5)  10 WORLD · 14 — Surilvan / Sullivan Family (OC faction)
+  UID    21  ->  UID 38     (x5)  70 TIME · 21 — [PHASE A] Kurta Village setting (pre-massacre)
+  UID   250  ->  UID 76     (x5)  80 VISUAL · 🎨 250 — Visual Settei: Kurapika Costume Reference
+  UID   404  ->  UID 67     (x5)  70 TIME · 204 — Autonomy Ethics: Kurapika's Operational Framework
+  UID   401  ->  UID 64     (x4)  70 TIME · 201b — ★ PHASE E.5 MASTER BLOCK (Chimera Ant era, V6, Vi
+  UID   402  ->  UID 66     (x4)  70 TIME · 202b — ★ PHASE F DEPARTURE: The Calculation That Destroy
+  UID  101d  ->  UID 628    (x3)  💞 50 REL · Kurapika → Vina — HIDDEN DEVOTION LAYER (สิ่งที่เขาทำลั
+  UID   104  ->  UID 36     (x3)  💞 50 REL · Kurapika ↔ Phantom Troupe (trigger) — รวม 1 ส่วน
+  UID  105b  ->  UID 99107  (x3)  👤 30 CHAR · Kurapika [L7 WHEN THE FIRE SHOWS / emotion cues]
+  UID   106  ->  UID 27     (x3)  👤 30 CHAR · 106 — William Sullivan — True Profile (deepening)
+  UID   80e  ->  UID 614    (x3)  👤 30 CHAR · Kurapika — DEEP PSYCHOLOGY LAYER (mechanism under the 
+  UID    85  ->  UID 99110  (x3)  👤 30 CHAR · Killua [L1 CORE + daily personality]
+  UID  101f  ->  UID 628    (x2)  💞 50 REL · Kurapika → Vina — HIDDEN DEVOTION LAYER (สิ่งที่เขาทำลั
+  UID   107  ->  UID 61     (x2)  70 TIME · 107 — Killua's Left-Behind Note (the document, the lever
+  UID    20  ->  UID 37     (x2)  70 TIME · 20 — Master Timeline (reference index)
+  UID   203  ->  UID 13     (x2)  10 WORLD · 203 — Care Council Operational Protocol (Phase E.5 / Ph
+  UID   211  ->  UID 74     (x2)  70 TIME · 211 — [PHASE A VISUAL] Vina's room — outside-world objec
+  UID    23  ->  UID 40     (x2)  70 TIME · 23 — [PHASE A] Kurta culture, festivals, faith
+  UID    24  ->  UID 41     (x2)  70 TIME · 24 — [PHASE A] Piko birds (Kurta mounts)
+  UID    56  ->  UID 55     (x2)  70 TIME · 56 — [PHASE D] ★ Chrollo Capture & Judgment Chain
+  UID    57  ->  UID 56     (x2)  70 TIME · 57 — [PHASE D] Yorknew Body Cues & Dialogue Triggers (pl
+  UID    83  ->  UID 99108  (x2)  👤 30 CHAR · Vina [L1 CORE full profile]
+  UID   100  ->  UID 35     (x1)  💞 50 REL · Trio — Kurapika+Pairo+Vina — รวม 1 ส่วน
+  UID  102b  ->  UID 33     (x1)  💞 50 REL · Vina ↔ Killua — รวม 3 ส่วน
+  UID   201  ->  UID 63     (x1)  70 TIME · 201 — Phase D — Yorknew scene hooks
+  UID   251  ->  UID 77     (x1)  80 VISUAL · 🎨 251 — Visual Settei: Kurapika's Five Chains (Hatsu)
+  UID   252  ->  UID 78     (x1)  80 VISUAL · 🎨 252 — Visual Settei: Killua Costume & Bag Reference
+  UID   254  ->  UID 80     (x1)  80 VISUAL · 🎨 254 — Visual Settei: Kurta Mystic Forest Reference
+  UID   255  ->  UID 624    (x1)  80 VISUAL · 🎨 255 — Settei: Killua Nen & Assassin Arts (คู่ขนาน UI
+  UID    54  ->  UID 53     (x1)  70 TIME · 54 — [PHASE D] Yorknew Day-by-Day Timeline (master event
+  UID    55  ->  UID 54     (x1)  70 TIME · 55 — [PHASE D] ★ Kurapika vs Uvogin (Chain Jail debut)
+  UID   700  ->  UID 40652  (x1)  [v48] 👤 30 CHAR · 652 — ★ Wendric Surilvan — Full Profile (RETCON:
+  UID   85c  ->  UID 99112  (x1)  👤 30 CHAR · Killua [L3 THREE-ERA POV (Vina-aware)]
+  UID    86  ->  UID 99117  (x1)  👤 30 CHAR · Gon [L1 CORE full profile]
+  UID    91  ->  UID 31     (x1)  👤 30 CHAR · 91 — The Elder (Kurta Village, Phase A)
+
+## ลิงก์ที่เป้าถูกลบไปแล้วตั้งแต่ก่อน v59 (ตัดออกจากเนื้อหา)
+  UID   636  <- เคยถูกอ้างจาก entry [716, 717]
+  UID   697  <- เคยถูกอ้างจาก entry [633]

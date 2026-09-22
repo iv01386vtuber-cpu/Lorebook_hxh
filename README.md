@@ -11,7 +11,13 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🌦️ | `lorebook/Weather_Director.json` | **Weather only** — just the `[wx:]` director entry, to drop into your *own* world without touching your canon |
 | 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
 | 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
+| 📕 | `lorebook/HxH_UNIFIED_v60_LEAN.json` | **v59 rebuilt for token economy** — 363 entries, always-on cut from 7,932 → 3,665 tok/turn, all 62 broken cross-references repaired. Import this instead of v59. |
+| 🗃️ | `lorebook/HxH_v60_Wiki_Archive.json` | The 402 unused English wiki stubs split out of v59 — optional second book, nothing lost |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+
+> **v59 → v60:** see [`docs/ANALYSIS_v59.md`](docs/ANALYSIS_v59.md) for the full analysis — what was broken
+> (cross-reference namespace collision, budget overflow, keyword storms), the plot summary, and the open
+> story threads that still need decisions. Rebuild with `python3 tools/build_v60_lean.py <v59.json> lorebook`.
 
 > **Note on the "Sullivan / Surilvan" spelling:** this is intentional in-world lore (entry `10` — *Surilvan* is the primary family name, *Sullivan* is William's branch spelling; both are valid), **not** a typo, so v48 leaves it untouched.
 
