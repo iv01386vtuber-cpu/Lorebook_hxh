@@ -12,6 +12,8 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
 | 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+| 📚 | `lorebook/HxH_UNIFIED_v69_LEAN.json` | HxH UNIFIED v68 + **หมวดเน็นละเอียด** 9 entry (UID 7, 620, 99600–99606) · ตัดตัวอย่างหลังอาร์คยอร์คนิวออก |
+| 📚 | `lorebook/Nen_Encyclopedia_HxH.json` | เฉพาะหมวดเน็น 9 entry แยกไฟล์ ไว้แนบคู่ lorebook อื่น (ถ้าใช้ v69 แล้วไม่ต้องแนบซ้ำ) |
 | 🎮 | `preset/HxH_Hunter_RPG_Opus5_v1.json` | **Hunter RPG preset** for Claude Opus 5 — togglable RPG mode, HUD, quests, fate dice, Hard Mode, UI regex embedded |
 | 🎮 | `preset/HxH_RPG_UI.regex.json` | The same UI regex scripts as a separate file (for reference / manual import) |
 
