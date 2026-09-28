@@ -12,6 +12,8 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
 | 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+| 🎮 | `preset/HxH_Hunter_RPG_Opus5_v1.json` | **Hunter RPG preset** for Claude Opus 5 — togglable RPG mode, HUD, quests, fate dice, Hard Mode, UI regex embedded |
+| 🎮 | `preset/HxH_RPG_UI.regex.json` | The same UI regex scripts as a separate file (for reference / manual import) |
 
 > **Note on the "Sullivan / Surilvan" spelling:** this is intentional in-world lore (entry `10` — *Surilvan* is the primary family name, *Sullivan* is William's branch spelling; both are valid), **not** a typo, so v48 leaves it untouched.
 
@@ -111,6 +113,68 @@ If `[wx: ...]` shows up as visible text in replies, import `weather/Hide-Weather
 **Extensions → Regex → Import**. It is set to *markdown/display only* (`placement: AI output`,
 `markdownOnly: true`), so the tag disappears from view **but stays in the raw message** for the overlay
 to parse. Do not make it "prompt only" or delete the raw text, or the overlay will stop reacting.
+
+---
+
+## 🎮 Hunter RPG preset (Claude Opus 5) — `preset/HxH_Hunter_RPG_Opus5_v1.json`
+
+พรีเซ็ต SillyTavern สำหรับเล่น Lorebook **HxH UNIFIED v68** แบบเกม RPG — ต่อยอดจาก `ST_Claude_Preset_v11_HxH_v68`
+(authority chain · Thai prose · NPC/Scheme engine · no-romance lock ยังอยู่ครบ) แล้วเพิ่มชั้นเกมที่เปิด/ปิดได้ทีละโมดูล
+
+### ติดตั้ง
+
+1. **API Connections** → Chat Completion → source **Claude** → model **`claude-opus-5`**
+2. **AI Response Configuration** (แท็บซ้ายสุด) → Import preset → เลือกไฟล์ `preset/HxH_Hunter_RPG_Opus5_v1.json`
+3. ตอน import ST จะถามว่าให้เปิด **regex ที่มากับพรีเซ็ต** ไหม → กด **อนุญาต** (นี่คือตัววาด UI การ์ด Hunter)
+   ถ้า ST เวอร์ชันของคุณไม่รองรับ regex ในพรีเซ็ต ให้ import `preset/HxH_RPG_UI.regex.json` ผ่าน *Extensions → Regex* แทน
+4. แนบ lorebook `HxH_UNIFIED_v68` ตามเดิม
+
+> **หมายเหตุ Opus 5:** Opus 5 ไม่รองรับ assistant prefill และไม่รับ `temperature/top_p/top_k` —
+> พรีเซ็ตนี้ปล่อย prefill ว่างไว้แล้ว ถ้า ST ขึ้น error 400 เรื่อง sampling/`budget_tokens` ให้อัปเดต SillyTavern เป็นเวอร์ชันล่าสุด
+> (เวอร์ชันเก่าส่งพารามิเตอร์ที่รุ่นนี้ไม่รับ) · `max tokens` ตั้งไว้ 12000 เพราะรวม thinking ด้วย
+
+### โมดูล (Prompt Manager)
+
+| โมดูล | ค่าเริ่ม | ทำอะไร |
+|---|---|---|
+| 🎮 RPG Core — Hunter Status HUD | ✅ | HP (ค่าเลือด) · VITAL (พลังชีวิต) · AURA · MIND + ประเภทเน็น · สภาวะ · อายุขัยที่จ่ายไป · ยาเหลือ · ของ · เงิน · หนี้บุญคุณ · ตำแหน่ง/เวลา |
+| 🪶 Mini HUD | ⬜ | ประหยัด token: การ์ดย่อ แสดงแบบเต็มเฉพาะเทิร์นที่ของ/เงิน/ที่อยู่เปลี่ยน |
+| 📜 Quest Board | ✅ | ★ เควสหลัก (ดึงจาก STORY STATE / แผนลับ / แคนอนยอร์คนิว) · ◇ เควสรองจาก NPC · ⚄ เควสสุ่มมีเวลาจำกัด · ✔/✘ ผลลัพธ์ถาวร |
+| 🎲 Fate Dice | ✅ | ST ทอย `{{roll:1d20}}`/`1d100` ให้จริงทุกเทิร์น — GM ตั้ง DC ก่อนดูลูกเต๋า · d100 ≤ 15 = เควสสุ่มโผล่ |
+| ☠️ Hard Mode — Hunter Exam | ✅ | ศัตรูฉลาดตามแคนอน · ไม่มีแผน = แพ้ · ข้อมูลมีราคา · ทรัพยากรจำกัด · ถูกจับ/ตายได้ · ไม่มี power-up |
+| ⚔️ Nen Combat & Tactics | ✅ | Ryu/Ko/Ken/Zetsu/En, ความได้เปรียบระหว่างสายเน็น, ท่าที่ถูกเห็นแล้วถูกแก้ทางได้ |
+| 🎬 Title Card | ✅ | การ์ดชื่อตอนแบบมังงะโทงาชิ `No.47 ◆ สิบคืน` ตอนเปลี่ยนฉาก |
+| 🎯 Action Hints | ⬜ | ตัวเลือก 3 ทางพร้อมความเสี่ยง (ไม่บอกว่าทางไหนถูก) |
+| 🟢🟡🟠 Length | 🟡 | ความยาวร้อยแก้ว 2–3 / 3–5 / 5–7 ย่อหน้า — เปิดทีละอัน |
+
+**ปิดทุกโมดูลในกลุ่ม 🎮** = กลับเป็นโหมดนิยายล้วนแบบ v11 (ประหยัด token ที่สุด)
+
+### ประหยัด token
+
+- Regex `🪶 ตัด HUD/Quest เก่า` ลบบล็อกเกมออกจาก **prompt** ทุกข้อความยกเว้นข้อความ AI ล่าสุด → โมเดลเห็นแค่ค่าสถานะปัจจุบัน ไม่เห็นประวัติ HUD ทั้งแชท
+- โมเดลเขียน HUD แบบย่อ (`[[HP 82/100 82%]]`) — การ์ดสวย ๆ สร้างฝั่งหน้าจอโดย regex ไม่เสีย output token กับ HTML/CSS
+
+### รูปแบบที่โมเดลเขียน → สิ่งที่คุณเห็น
+
+```
+<hxh_status>
+◈ วีน่า เซอร์ลิแวน「The Timeless Doll」 · 特質系 สายพิเศษ
+[[HP 71/100 71%]]
+[[VITAL 64/100 64%]]
+[[AURA 38/100 38%]]
+[[MIND 45/100 45%]]
+⚠ ลมหายใจตื้น · เลือดกำเดาไหลเมื่อชั่วโมงก่อน
+⏳ อายุขัยที่จ่ายไป ≈3–5 วัน (+0)
+💊 ยา Chronos-End: 10 คืน
+📍 โรงแรมเบทาเคิล ห้อง 1204 · 28 ส.ค. 1999 23:40
+</hxh_status>
+<hxh_quest>
+★ สิบคืน — หาแหล่งยาก่อนเม็ดสุดท้ายหมด · เบาะแส: ขวดพิมพ์ฝ่ายเวชกรรมประจำตระกูล · ⏱7 ก.ย.
+</hxh_quest>
+```
+
+แสดงผลเป็นการ์ด *Hunter License* สีทอง-ดำ มีแถบ HP แดง · VITAL เขียว · AURA ม่วง · MIND ฟ้า, ป้าย `HUNTER × HUNTER`
+และ Quest Log แบบเว็บฮันเตอร์
 
 ---
 
