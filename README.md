@@ -12,6 +12,7 @@ Lukso Province, trained in the assassin arts alongside Killua Zoldyck. It ships:
 | 🌦️ | `lorebook/Weather_Director_HxH.json` | Weather-only, **tuned for the v47/v48 HxH book** (declares the tag META so it obeys `★02 ANTI_OOC` / `★03 STYLE`, references the `303` climate canon) |
 | 📚 | `lorebook/HxH_Lorebook_v48.json` | The user's **full 644-entry HxH book with the weather emitter already merged in** (now 645 entries, `00 SYS ★ 05`). Import this one file and weather is wired in. |
 | 🌦️ | `weather/Hide-Weather-Tag.regex.json` | A **Regex** that hides the `[wx:]` tag from the chat (display-only; overlay still reads it) |
+| 🩸 | `night_city/` | **Night City — Crimson Reaper** (separate world): Kill character card (PNG + JSON, lorebook embedded), 27-entry world lorebook, Vina persona, and Night City–tuned Gemini presets. See `night_city/README.md` |
 
 > **Note on the "Sullivan / Surilvan" spelling:** this is intentional in-world lore (entry `10` — *Surilvan* is the primary family name, *Sullivan* is William's branch spelling; both are valid), **not** a typo, so v48 leaves it untouched.
 
