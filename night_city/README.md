@@ -11,7 +11,7 @@
 | `Kill_Crimson_Reaper.png` | **การ์ดตัวละครคิล** (รูป + ข้อมูลการ์ดฝังในไฟล์ + Lorebook ฝังมาแล้ว) | Characters → Import → เลือกไฟล์ → กด *Yes* ตอนถามว่าจะนำเข้า Lorebook ด้วยไหม |
 | `Kill_Crimson_Reaper.card.json` | การ์ดเดียวกันแบบ JSON (สำหรับแก้ไข) | นำเข้าแทน PNG ได้ |
 | `NightCity_Crimson_Reaper_Lorebook.json` | **Lorebook โลกไนท์ซิตี้** 40 entry | World Info → Import |
-| `Vina_Persona.md` | **Persona วีน่า** ที่วิเคราะห์จากไฟล์ของไอวี่ พร้อมข้อความไว้วาง | Persona Management → สร้าง `วีน่า` แล้ววางข้อความ |
+| `Vina_Persona.md` / `Vina_Persona.txt` | **Persona วีน่า v2** วิเคราะห์จากไฟล์ของไอวี่ และอัปเดตตามบุ๊ก 40 entry (.txt ไว้คัดลอกบนมือถือ) | Persona Management → สร้าง `วีน่า` แล้ววางข้อความ |
 | `Vina_avatar.png` | รูป Persona ของวีน่า | ใช้เป็นรูป Persona |
 | `Gemini_Omega_2.6_Night_City_Lite.json` | ⚡ **พรีเซ็ต Omega 2.6 Lite (แนะนำ)**: ประหยัดโทเค็น + ระบบ RPG + มุมมองพระเจ้า (ดูหัวข้อ Lite ด้านล่าง) | AI Response Configuration → Import preset |
 | `Gemini_Omega_2.6_Night_City.json` | พรีเซ็ต Omega 2.6 (ตัวเต็มเดิม) + โมดูล Velvet Underworld ที่จูนให้เข้ากับไนท์ซิตี้ | AI Response Configuration → Import preset |
